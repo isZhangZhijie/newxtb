@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+
+  
+  <!-- <link rel="stylesheet" href="{{asset('home/css/list.css')}}" />
+  <link rel="stylesheet" href="{{asset('card/card-view.css')}}?t=ddd" />
+  <link rel="stylesheet" href="{{asset('vendor/swiper/css/swiper.min.css')}}" />
+  <link rel="stylesheet" href="{{asset('card/origin.min.css')}}" />
+
+  <script type="text/javascript" src="{{asset('home/js/layer.js')}}"></script>
+  <script src="{{asset('card/card-view.js')}}"></script> -->
+
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.js"></script>
+
+  <link href="https://cdn.bootcss.com/layer/3.1.0/theme/default/layer.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+
+  <link rel="stylesheet" href="../src/style/global.css">
+
+
+</head>
+<body>
+  <!-- 头部导航 start -->
+  <div class="xtb-header">
+    <nav class="am-g xtb-container">
+      <div class="am-u-sm-2">
+        <h2 class="am-topbar-brand">
+          <a href="#" class="am-text-ir">喜帖吧</a>
+        </h2>
+      </div>
+
+      <div class="am-u-sm-10">
+        <ul class="login-box am-topbar-right">
+          <!-- 未登录 -->
+          <!-- <li>
+            <button
+              class="login"
+              data-am-modal="{target: '#index-login-wechat', width: 960, height: 680}"
+            >登录 / 注册</button>
+          </li> -->
+          <!-- 已登录 -->
+          <li class="login-down">
+            <span class="login-down-menu">
+              <span class="img-box"><img src="../src/images/140.png" alt=""></span>欢迎<i></i>
+            </span>
+            <ul class="login-dropdown-menu">
+              <li>
+                <a href="">我的喜帖</a>
+              </li>
+              <li>
+                <a href="">个人中心</a>
+              </li>
+              <li>
+                <a href="">我的收藏</a>
+              </li>
+              <li>
+                <a href="">余额提现</a>
+              </li>
+              <li>
+                <a href="">退出账户</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="">消息通知</a>
+          </li>
+          <li>
+            <a href="">我的订单</a>
+          </li>
+          <li>
+            <a href=""><button class="cart">购物车 (0)</button></a>
+          </li>
+        </ul>
+
+        <ul class="header-nav am-nav am-nav-pills am-topbar-left">
+          <li class="active">
+            <a href="">首页</a>
+          </li>
+          <li>
+            <a href=""><i></i>请柬模板</a>
+          </li>
+          <li>
+            <a href="">婚礼服务</a>
+          </li>
+          <li>
+            <a href="">文章百科</a>
+          </li>
+          <li>
+            <a href="">幸福商城</a>
+          </li>
+          <li>
+            <a href="">VIP特权</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- 头部导航 end -->
+
+
+
+  <!-- 请柬详情页 start -->
+  <div class="am-g" style="background-color: #f4f2f0;">
+    <div class="xtb-container">
+      <!-- 请柬详情面包屑、搜索框 start -->
+      <div class="am-u-sm-12" style="height:70px">
+        <div class="xtb-crumb am-u-sm-8" style="line-height:70px">
+          <ul class="xtb-breadcrumb">
+            <li><a href="#">电子请柬</a></li>
+            <li><a href="javascript:;">XXX请柬</a></li>
+          </ul>
+        </div>
+
+        <div class="xtb-sm-search-box am-u-sm-4" style="padding-top: 16px;">
+          <div class="am-input-group am-input-group-danger">
+            <input type="text" class="am-form-field" placeholder="中秋节">
+            <span class="am-input-group-label">
+              <i class="am-icon-search am-icon-fw"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- 请柬详情面包屑、搜索框 end -->
+
+      <!-- 请柬详情 start -->
+      <div class="invit-detail-content am-u-sm-12">
+
+        <!-- 请柬轮播图 start -->
+        <div class="invit-slider">
+          <div class="h-list-Photo-l swiper-container" id="card">
+            <div id="card-music" class="iconfont"></div>
+          </div>
+          <div class="h-list-Photo-r">
+            <ul class="h-list-li"></ul>
+          </div>
+          <div class="am-u-md-8 h-paddin-zero" style="width:364px;">
+            <div class="am-u-md-4 h-paddin-zero h-list-thickness-page"><button class="h-list-thickness-prev">上一页</button></div>
+            <div class="am-u-md-4 h-paddin-zero h-list-thickness-page" id="page-count"></div>
+            <div class="am-u-md-4 h-paddin-zero h-list-thickness-page"><button class="h-list-thickness-next">下一页</button></div>
+          </div>
+        </div>
+        <!-- 请柬轮播图 end -->
+
+        <!-- 请柬轮播图右侧详情 start -->
+        <div class="invit-detail">
+          <div class="invit-detail-left">
+            <div>
+              <h1 class="title xtb-3dots">七夕恋爱表白纪念相册</h1>
+              <span class="cost">免费</span>
+            </div>
+
+            <p class="desc xtb-3dots">
+              用于情侣表白、告白、求婚或者是情侣纪念日的粉色系卡通手绘H5模板
+            </p>
+
+            <div class="xtb-cf">
+              <figure class="invit-make-qr-code">
+                <div class="img-box">
+                  <!-- <img src="../src/images/weixingongzhonghao.png" alt=""/> -->
+                </div>
+                <figcaption class="">
+                  手机扫描预览制作
+                </figcaption>
+              </figure>
+              <div class="invit-label-list">
+                <a href="javascript:;">邀请函</a>
+                <a href="javascript:;">结婚请柬</a>
+                <a href="javascript:;">新婚邀请函</a>
+                <a href="javascript:;">梦幻唯美</a>
+                <a href="javascript:;">梦幻唯美</a>
+              </div>
+            </div>
+
+            <a type="button" class="invit-online-make-btn">点击在线制作</a>
+          </div>
+
+          <div class="invit-detail-right">
+            <div class="help">
+              <a href="">隐私保护</a> | <a href="">使用帮助</a>
+            </div>
+            <div class="collect">
+              <span class="am-icon-heart"></span>
+              收藏请柬
+            </div>
+            <a href="" class="invit-teaching-video">
+              <img src="../src/images/teaching-video2.gif" alt="">
+            </a>
+
+            <div class="guanzhu-qr-code">
+              <img class="text" src="../src/images/detail-guanzhu.png" alt="">
+              <img class="qr-code" src="../src/images/detail-gongzhonghao.png" alt="">
+            </div>
+          </div>
+
+          <div class="xtb-invit-interest">
+            <p>请柬趣味玩法</p>
+            <img src="../src/images/detail-tese.png" alt="">
+          </div>
+        </div>
+        <!-- 请柬轮播图右侧详情 end -->
+      </div>
+      <!-- 请柬详情 end -->
+
+      <div class="zhuanti am-u-sm-12">
+        <ul class="xtb-cf">
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-yaoqinghan.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-huliqingjian.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-huodongcuxiao.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-jierizhufu.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="am-g">
+    <div class="xtb-container">
+      <!-- 请柬详情猜你喜欢 start -->
+      <div class="xtb-invitDetail-ulove" style="padding:0;">
+        <div class="headline">
+          <div class="title"><i></i>猜你喜欢</div>
+        </div>
+        <div class="xtb-invit-list xtb-invit-list-3column">
+          <ul>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+            <li>
+              <span class="img-box">
+                <img src="../src/images/208ov8l.jpg" alt="">
+                <span class="xtb-invit-list-make-preview">
+                  <a href="" class="preview">预览</a>
+                  <a href="" class="make">立即制作</a>
+                </span>
+              </span>
+              <span class="xtb-invit-list-detail xtb-cf">
+                <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+                <span class="xtb-invit-list-cost">
+                  免费
+                </span>
+                <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+                <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 请柬详情猜你喜欢 end -->
+
+      <!-- 请柬详情相关资讯 start -->
+      <div class="xtb-invitDetail-news">
+        <div class="headline">
+          <div class="title"><i></i>相关资讯</div>
+        </div>
+        <div class="xtb-invitDetail-newsList">
+          <ul>
+            <li>
+              <h2 class="title"><a href="">新人需要知道的西式婚礼传统习俗都有哪些？</a></h2>
+              <p class="desc">​父亲的爱是深沉的，可到了儿子的婚礼，这份爱是不需要隐藏的。爱需要表达，作为新郎的父亲，可以趁着在儿子婚礼致辞讲话，表达出对儿子的爱与祝福。</p>
+              <span class="invit-about-list">
+                <a href="">邀请函</a>
+                <a href="">结婚请柬</a>
+                <a href="">新婚邀请函</a>
+              </span>
+            </li>
+            <li>
+              <h2 class="title"><a href="">新人需要知道的西式婚礼传统习俗都有哪些？</a></h2>
+              <p class="desc">​父亲的爱是深沉的，可到了儿子的婚礼，这份爱是不需要隐藏的。爱需要表达，作为新郎的父亲，可以趁着在儿子婚礼致辞讲话，表达出对儿子的爱与祝福。</p>
+              <span class="invit-about-list">
+                <a href="">邀请函</a>
+                <a href="">结婚请柬</a>
+                <a href="">新婚邀请函</a>
+              </span>
+            </li>
+            <li>
+              <h2 class="title"><a href="">新人需要知道的西式婚礼传统习俗都有哪些？</a></h2>
+              <p class="desc">​父亲的爱是深沉的，可到了儿子的婚礼，这份爱是不需要隐藏的。爱需要表达，作为新郎的父亲，可以趁着在儿子婚礼致辞讲话，表达出对儿子的爱与祝福。</p>
+              <span class="invit-about-list">
+                <a href="">邀请函</a>
+                <a href="">结婚请柬</a>
+                <a href="">新婚邀请函</a>
+              </span>
+            </li>
+            <li>
+              <h2 class="title"><a href="">新人需要知道的西式婚礼传统习俗都有哪些？</a></h2>
+              <p class="desc">​父亲的爱是深沉的，可到了儿子的婚礼，这份爱是不需要隐藏的。爱需要表达，作为新郎的父亲，可以趁着在儿子婚礼致辞讲话，表达出对儿子的爱与祝福。</p>
+              <span class="invit-about-list">
+                <a href="">邀请函</a>
+                <a href="">结婚请柬</a>
+                <a href="">新婚邀请函</a>
+              </span>
+            </li>
+          </ul>
+          <div class="other-see xtb-invit-badge">
+            <span>其他人还看了</span>
+            <a href="">结婚邀请函</a>
+            <a href="">开业邀请函</a>
+            <a href="">生日邀请函</a>
+            <a href="">宝宝满月邀请函</a>
+            <a href="">喜迁邀请函</a>
+          </div>
+        </div>
+      </div>
+      <!-- 请柬详情相关资讯 end -->
+
+      <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
+
+
+      <div class="xtb-invitDetail-bottom-recommend">
+        <a href="">
+          <img src="../src/images/guanggao1-daizuo.png" alt="">
+        </a>
+        <a href="">
+          <img src="../src/images/guanggao4-xiaogongju.png" alt="">
+        </a>
+        <a href="">
+          <img src="../src/images/guanggao3-AI.png" alt="">
+        </a>
+        <a href="">
+          <img src="../src/images/guanggao2-hongbao.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- 请柬详情页 end -->
+
+
+
+  <!-- 页脚 start -->
+  <div class="xtb-footer">
+    <div class="am-g xtb-footer-color">
+      <div class="xtb-container">
+        <ul class="xtb-footer-list xtb-cf">
+          <li>
+            <h2> 喜帖吧微信公众号</h2>
+            <img title="" alt="" target="_blank" src="../src/images/weixingongzhonghao.png">
+          </li>
+          <li class="">
+            <h2>联系客服</h2>
+            <a href="javascript:;">0871-63106611</a>
+            <a href="javascript:;" onclick="qimoChatClick()" >在线客服<img title="" src="../src/images/kefu.png"></a>
+          </li>
+          <li>
+            <h2>关于喜帖吧</h2>
+            <a href="">关于我们</a>
+            <a href="">商家后台</a>
+            <a href="">商家合作</a>
+            <a href="">常见问题与解答</a>
+          </li>
+          <li>
+            <h2>授权/条款</h2>
+            <a href="">用户隐私</a>
+            <a href="">保护协议</a>
+          </li>
+          <li>
+            <h2>联络我们</h2>
+            <a href="javascript:;">BUG邮箱：<br>service@xitieba.com</a>
+            <a href="javascript:;">通讯地址：<br>云南省昆明市东站岔街<br>
+                  鸿运都市别墅5单元1101</a>
+          </li>
+          <li>
+            <h2>更多推荐</h2>
+            <a href="">结婚工具小程序</a>
+            <a href="">AI请柬机器人小程序</a>
+            <a href="">喜帖吧请柬小程序</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="am-g xtb-footer-color-2" >
+      <div class="xtb-container">
+        <div class="xtb-footer-links" style="">
+          <p>
+            <a href="https://www.pintu8.com/" target="_blank">美女图片大全</a> <span>丨</span>
+            <a href="https://www.wjyh.com" target="_blank">办公用品</a> <span>丨</span>
+            <a href="http://www.fmw.com.cn" target="_blank">蜂蜜</a> <span>丨</span>
+            <a href="http://www.eqiseo.com/" target="_blank">SEO优化</a> <span>丨</span>
+            <a href="http://www.nv43.com" target="_blank">时尚女人网</a> <span>丨</span>
+            <a href="http://www.bbyy.com" target="_blank">婴儿游泳馆加盟</a> <span>丨</span>
+            <a href="http://www.0600.com" target="_blank">母婴店加盟</a> <span>丨</span>
+            <a href="http://www.usa-idc.com/" target="_blank">香港服务器租用</a> <span>丨</span>
+            <a href="https://aimeike.tv/" target="_blank">照片视频制作软件</a> <span>丨</span>
+            <a href="http://f.cx/" target="_blank">房产信息网</a> <span>丨</span>
+            <a href="http://www.9mdm.com/" target="_blank">斗破苍穹漫画</a> <span>丨</span>
+            <a href="https://zuciwang.com/" target="_blank">组词网</a> <span>丨</span>
+            <a href="http://www.domengle.com/" target="_blank">周公解梦</a> <span>丨</span>
+            <a href="http://www.kanqiye.com/" target="_blank">影视公司</a> <span>丨</span>
+            <a href="http://www.qiwen366.com/" target="_blank">奇闻异事</a> <span>丨</span>
+            <a href="http://www.heimi001.com" target="_blank">影音先锋</a> <span>丨</span>
+            <a href="http://www.hunlimao.com" target="_blank">婚纱摄影排名</a> <span>丨</span>
+            <a href="http://www.atzuche.com" target="_blank">汽车租赁公司</a> <span>丨</span>
+            <a href="http://www.minyaojita.cn" target="_blank">吉他教学视频</a> <span>丨</span>
+            <a href="http://www.jnfanya.com" target="_blank">麻将技巧</a> <span>丨</span>
+            <a href="http://www.eeelw.com" target="_blank">日语论文</a> <span>丨</span>
+            <a href="http://www.cdloc.com" target="_blank">成都装修</a> <span>丨</span>
+            <a href="http://www.yygod.com" target="_blank">YY八卦</a> <span>丨</span>
+            <a href="http://www.58gc.cn" target="_blank">美女图片</a> <span>丨</span>
+            <a href="http://www.5chaxun.com" target="_blank">福利吧</a> <span>丨</span>
+            <a href="http://www.yimingxiaozhan.com" target="_blank">宝宝取名字</a> <span>丨</span>
+            <a href="http://www.ujiuye.com" target="_blank">IT培训学校</a> <span>丨</span>
+            <a href="http://www.diyimeishiw.cn" target="_blank">重庆餐饮培训</a> <span>丨</span>
+            <a href="http://www.114xie.com/" target="_blank">萌幻之乡</a> <span>丨</span>
+            <a href="http://www.jiehun.com.cn/" target="_blank">中国婚博会</a> <span>丨</span>
+            <a href="http://www.idcs.cn/" target="_blank"> 服务器租用</a> <span>丨</span>
+            <a href="http://paihang.jiameng.com/" target="_blank">加盟项目排行</a> <span>丨</span>
+            <a href="http://www.suzhenyi.com/" target="_blank"> 深圳纹身</a> <span>丨</span>
+            友情链接申请联系QQ：1195282764 <a href="https://www.xitieba.com/about/links" target="_blank">友情链接交换要求</a>
+          </p>
+        </div>
+
+        <div class="xtb-footer-copyright ">
+          <p>Copyright 2014-2018 xitieba.com | 喜帖吧免费电子请柬 | <a href="http://www.miitbeian.gov.cn/" target="_blank">滇ICP备12006567号-18</a> | <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53010302000463" rel="nofollow"><img src="../src/images/record.png" alt="备案">滇公网安备 53010302000463号</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 页脚 end -->
+
+
+  <!-- 贴边侧栏 start -->
+  <div class="sidebar">
+    <div class="my-invit">
+      <a href="">我的<br>喜帖</a>
+    </div>
+    <div class="chatBtn">
+      <a href=""><i></i>客服</a>
+    </div>
+    <div class="sidebar-list">
+      <ul>
+        <li class="">
+          <a href=""><i></i>VIP</a>
+        </li>
+        <li class="">
+          <a href=""><i></i>教程</a>
+        </li>
+        <li class="">
+          <a href="javascript:;"><i></i>推荐</a>
+          <div class="qr-code">
+            <img src="../src/images/tuijian.png" alt="">
+          </div>
+        </li>
+        <li class="">
+          <a href=""><i></i>婚庆</a>
+        </li>
+        <li class="">
+          <a href="javascript:;"><i></i>公众号</a>
+          <div class="qr-code">
+            <img src="../src/images/gongzhonghao.png" alt="">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="go-top" data-am-widget="gotop">
+      <a href="#top"><i></i>顶部</a>
+    </div>
+    <div class="head-animation">
+      <span class="sidebar-shadow"></span>
+      <img src="../src/images/cebian-AIenter.gif" alt="">
+      <div class="qr-code">
+        <img src="../src/images/531952025354950554.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- 贴边侧栏 end -->
+
+
+  <!-- 登录注册弹出框 start -->
+  <div class="login-box am-modal am-modal-no-btn" tabindex="-1" id="index-login-wechat">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd">
+        <img class="login-left-img" src="../src/images/58.png" alt="">
+        <div class="login-bd-content">
+          <img src="../src/images/4xtb.png" alt="" style="margin-bottom: 32px;">
+          <p class="create-invit-in-30s">30s创建免费电子请柬</p>
+
+          
+          <iframe scrolling="auto" allowtransparency="true" id="layui-layer-iframe2" name="layui-layer-iframe2" onload="this.className='';" class="" frameborder="0" src="https://www.xitieba.com/auth/weixinWeb/natural" style="height: 410px;"></iframe>
+
+
+          <div class="other-login">
+            <span>其他登录方式：</span>
+            <a class="login-icon icon-qq" href="javascript:;"><i></i></a>
+            <a
+              class="login-icon icon-phone"
+              data-am-modal="{target: '#index-login-phone', width: 960, height: 680}"
+              data-am-modal-close
+              href="javascript:;"
+            ><i></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-box am-modal am-modal-no-btn" tabindex="-1" id="index-login-phone">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd">
+        <img class="login-left-img" src="../src/images/58.png" alt="">
+        <div class="login-bd-content">
+          <img src="../src/images/4xtb.png" alt="" style="margin-bottom: 32px;">
+          <p class="create-invit-in-30s">30s创建免费电子请柬</p>
+
+          <span class="login-title">会员手机登录</span>
+          <span class="login-msg"></span>
+
+          <input type="text" id="phone" placeholder="手机号码">
+          <input type="password" id="password" placeholder="登录密码">
+
+          <div class="login-agree">
+            <label>
+              <input id="login_rempassword" type="checkbox">记住密码
+            </label>
+            <a
+              href="javascript:;"
+              target="_blank"
+              class="forget-pw"
+              data-am-modal="{target: '#index-forget-password', width: 960, height: 680}"
+              data-am-modal-close
+            >忘记密码？</a>
+          </div>
+
+          <a href="javascript:;" class="login-btn" id="login">登录</a>
+
+          <a
+            href="javascript:;"
+            class="regist-btn"
+            data-am-modal="{target: '#index-regist-phone', width: 960, height: 680}"
+            data-am-modal-close
+          >10s快速注册</a>
+
+
+          <div class="other-login">
+            <span>其他登录方式：</span>
+            <a class="login-icon icon-qq" href="javascript:;"><i></i></a>
+            <a
+              class="login-icon icon-wechat"
+              data-am-modal="{target: '#index-login-wechat', width: 960, height: 680}"
+              data-am-modal-close
+              href="javascript:;"
+            ><i></i></a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-box am-modal am-modal-no-btn" tabindex="-1" id="index-regist-phone">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd">
+        <img class="login-left-img" src="../src/images/58.png" alt="">
+        <div class="login-bd-content">
+          <img src="../src/images/4xtb.png" alt="" style="margin-bottom: 32px;">
+          <p class="create-invit-in-30s">30s创建免费电子请柬</p>
+
+          <span class="login-title">手机注册</span>
+          <span class="login-msg"></span>
+
+          <input type="text" id="reg_phone" placeholder="手机号码">
+          <input type="password" id="reg_password" placeholder="密码">
+          <input type="password" id="reg_repassword" placeholder="确认密码">
+
+          <div class="reg-code-box">
+            <input class="reg-code" type="password" id="reg_code" placeholder="验证码">
+
+            <button href="javascript:;" class="get-code-btn" id="get_code_reg">获取验证码</button>
+          </div>
+
+          <div class="login-agree">
+            <label>
+              <input id="regist-agree" type="checkbox" checked>同意用户协议和版权声明
+            </label>
+          </div>
+
+          <a href="javascript:;" class="login-btn" id="login">注册</a>
+
+
+          <div class="other-login">
+            <span>其他登录方式：</span>
+            <a class="login-icon icon-qq" href="javascript:;"><i></i></a>
+            <a
+              class="login-icon icon-wechat"
+              data-am-modal="{target: '#index-login-wechat', width: 960, height: 680}"
+              data-am-modal-close
+              href="javascript:;"
+            ><i></i></a>
+
+            <a
+              class="have-accout login-btn-regist"
+              href="javascript:;"
+              data-am-modal="{target: '#index-login-phone', width: 960, height: 680}"
+              data-am-modal-close=""
+            >登录</a>
+            <span class="have-accout">已有账号？</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-box am-modal am-modal-no-btn" tabindex="-1" id="index-forget-password">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd">
+        <img class="login-left-img" src="../src/images/58.png" alt="">
+        <div class="login-bd-content">
+          <img src="../src/images/4xtb.png" alt="" style="margin-bottom: 32px;">
+          <p class="create-invit-in-30s">30s创建免费电子请柬</p>
+
+          <span class="login-title">忘记密码</span>
+          <span class="login-msg"></span>
+          <input type="text" id="forget_phone" placeholder="手机号码">
+
+          <div class="reg-code-box">
+            <input class="reg-code" type="password" id="forget_code" placeholder="验证码">
+
+            <button href="javascript:;" class="get-code-btn" id="get_code_forget">获取验证码</button>
+          </div>
+          <input type="password" id="forget_password" placeholder="新密码">
+          <input type="password" id="forget_repassword" placeholder="确认密码">
+
+          <a href="javascript:;" class="login-btn" id="reset_password">重置密码</a>
+
+
+          <div class="other-login">
+            <span>其他登录方式：</span>
+            <a class="login-icon icon-qq" href="javascript:;"><i></i></a>
+            <a
+              class="login-icon icon-wechat"
+              data-am-modal="{target: '#index-login-wechat', width: 960, height: 680}"
+              data-am-modal-close
+              href="javascript:;"
+            ><i></i></a>
+
+            <a
+              class="have-accout login-btn-regist"
+              href="javascript:;"
+              data-am-modal="{target: '#index-login-phone', width: 960, height: 680}"
+              data-am-modal-close=""
+            >返回登录</a>
+            <!-- <span class="have-accout">已有账号？</span> -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 登录注册弹出框 end -->
+
+
+
+  <script>
+
+    //第三方登陆
+    $(function() {
+      // var index = parent.layer.getFrameIndex(window.name);
+      //第三方登陆
+      $('.icon-qq').click(function () {
+        // var ref = localStorage.getItem('ref');
+        layer.open({
+          type: 2,
+          border: [0],
+          title: false,
+          shadeClose: true,
+          closeBtn: true,
+          area: ['830px', '400px'],
+          // content: '{{url('auth/qq')}}'+'/'+ref
+          content: 'https://www.xitieba.com/auth/qq/natural'
+        });
+      });
+    });
+
+    // 验证码
+    $('.get-code-btn').click(function() {
+      var target = $(this)
+      var time = 60
+      var get_code_timer = setInterval(function() {
+        target.text(time + '秒重新获取').attr('disabled', 'disabled')
+        time--
+        if(time == -1) {
+          clearInterval(get_code_timer)
+          target.text('获取验证码').removeAttr('disabled', 'false')
+        }
+      }, 1000)
+    })
+
+
+    // 请柬详情动态轮播图设置
+    // function setInvitSlider() {
+    //   var data = {!! $pages !!}
+    //   , songSrc = '{{$type == 'original' ? $song_src : ($template->song ? $template->song->src : '')}}'
+    //   , pages = []
+    //   , len = data.pages.length
+    //   , thumb = document.querySelector('.h-list-li')
+    //   , pageCount = document.querySelector('#page-count')
+    //   , callbacks = {
+    //     onSlideChangeEnd: function (self) {
+    //       pageCount.innerHTML = self.activeIndex + '/' + pages.length
+    //     },
+    //     onInit: function (self) {
+    //       pageCount.innerHTML = self.activeIndex + '/' + pages.length
+    //     },
+    //     loop: true,
+    //   }
+
+    //   for (var i = 0; i < data.order.length; i++) {
+    //     var id = data.order[i]
+    //     , pageThumb = document.createElement('li')
+    //     for (var j = 0; j < len; j++) {
+    //       if (id === data.pages[j].id) {
+    //         pages[i] = data.pages[j]
+    //         pages[i].elements = (typeof pages[i].elements == 'string' ? JSON.parse(pages[i].elements) : pages[i].elements).filter(Boolean)
+    //       }
+    //     }
+    //     pageThumb.setAttribute('data-index', i)
+    //     pageThumb.innerHTML = '<img src="/page-thumb/' + pages[i].id + '.jpg">'
+    //     thumb.appendChild(pageThumb)
+    //   }
+    //   var swiper = Card.render(pages, document.querySelector('.h-list-Photo-l'), callbacks)
+    //   document.querySelector('.h-list-thickness-prev').addEventListener('click', swiper.slidePrev.bind(swiper))
+    //   document.querySelector('.h-list-thickness-next').addEventListener('click', swiper.slideNext.bind(swiper))
+
+    //   thumb.addEventListener('click', function (ev) {
+    //     if (ev.target.tagName === 'IMG') {
+    //       swiper.slideTo(parseInt($(ev.target.parentNode).data('index')) + 1)
+    //     }
+    //   });
+
+    //   var player = document.createElement('audio');
+    //   if (songSrc) {
+    //       player.loop = true;
+    //       player.preload = true;
+    //       player.src = songSrc;
+    //       player.play();
+    //       $('#card-music').click(function () {
+    //           player.paused ? player.play() : player.pause();
+    //           $('#card-music').toggleClass('play')
+    //       })
+    //       .addClass('play')
+    //   } else {
+    //       $('#card-music').remove()
+    //   }
+    // }
+
+
+
+  </script>
+</body>
+</html>

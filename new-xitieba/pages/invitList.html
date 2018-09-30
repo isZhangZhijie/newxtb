@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+  <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.js"></script>
+
+  <link rel="stylesheet" href="../src/style/global.css">
+
+
+</head>
+<body>
+
+  <!-- 通用的顶部搜索栏 start -->
+  <div class="am-g xtb-common-top-search article-type">
+    <div class="xtb-container">
+      <div class="am-u-sm-3 xtb-top-search-left-img">
+        <img src="../src/images/top1.png" alt="">
+      </div>
+      <div class="am-u-sm-6" style="padding-top: 22px;">
+        <div class="am-input-group am-input-group-danger am-u-sm-12">
+          <input id="top-search-input" type="text" class="am-form-field" placeholder="输入您想要找的关键词">
+          <span id="top-search-click" class="am-input-group-label">
+            <i class="am-icon-search am-icon-fw"></i>搜索
+          </span>
+        </div>
+        <div class="xtb-top-hot-search am-u-sm-12">
+          <span>热门搜索：</span>
+          <ul>
+            <li><a href="">邀请函</a></li>
+            <li><a href="">招聘</a></li>
+            <li><a href="">企业介绍</a></li>
+            <li><a href="">婚礼请柬</a></li>
+            <li><a href="">中秋节</a></li>
+            <li><a href="">开学</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="xtb-top-search-right-btn am-u-sm-3" style="padding-top: 22px;">
+        <ul>
+          <li>
+            <img src="../src/images/logo-AI.png" alt="">
+            <span>AI智能请柬</span>
+            <div class="qr-code qr-code-AI">
+              <img src="../src/images/203.png" alt="">
+            </div>
+          </li>
+          <li>
+            <img src="../src/images/logo-gongju.png" alt="">
+            <span>结婚工具</span>
+            <div class="qr-code qr-code-gongju">
+              <img src="../src/images/62.png" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 通用的顶部搜索栏 end -->
+
+  <!-- 列表页详情 start -->
+  <div class="am-g" style="background-color:#f4f2f0;padding-bottom:50px;">
+    <div class="xtb-container">
+      <div class="zhuanti">
+        <div class="headline">精品专题</div>
+        <ul class="xtb-cf">
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-yaoqinghan.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-huliqingjian.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-huodongcuxiao.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../src/images/zhuanti-jierizhufu.png" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="xtb-crumb" style="line-height:36px">
+        <ul class="xtb-breadcrumb">
+          <li><a href="#">电子请柬</a></li>
+          <li><a href="javascript:;">全部分类</a></li>
+        </ul>
+      </div>
+
+      <div class="invitList-sel-box">
+        <div class="invit-use invit-selector">
+          <span>用途</span>
+          <ul class="xtb-cf">
+            <li class="active">不限</li>
+            <li>邀请函</li>
+            <li>公司简介</li>
+            <li>婚礼请柬</li>
+            <li>活动促销</li>
+            <li>音乐相册</li>
+            <li>生日</li>
+            <li>企业文化</li>
+            <li>简历</li>
+            <li>同学会</li>
+            <li>节日祝福</li>
+            <li>微商</li>
+            <li>心灵鸡汤</li>
+            <li>毕业</li>
+            <li>电子名片</li>
+            <li>情侣表白</li>
+            <li>夏令营</li>
+            <li>乔迁之喜</li>
+          </ul>
+        </div>
+        <div class="invit-style invit-selector">
+          <span>风格</span>
+          <ul class="xtb-cf">
+            <li class="active">不限</li>
+            <li>流行时尚</li>
+            <li>卡通手绘</li>
+            <li>梦幻唯美</li>
+            <li>中国典美</li>
+            <li>欧美风尚</li>
+            <li>高雅大气</li>
+            <li>文艺清新</li>
+            <li>几何艺术</li>
+            <li>极简艺术</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="invitList-sort-box xtb-cf">
+        <ul class="invit-sorter xtb-cf">
+          <li class="default-sort active">
+            <i></i>默认排序
+          </li>
+          <li class="recommend-sort">
+            <i></i>最新推荐
+          </li>
+          <li class="hot-sort">
+            <i></i>最受欢迎
+          </li>
+          <li class="newest-sort">
+            <i></i>最新发布
+          </li>
+        </ul>
+
+        <!-- 请柬颜色选择器 start -->
+        <div class="invit-color-box am-dropdown" data-am-dropdown>
+          <div class="invit-color-selector am-dropdown-toggle" data-am-dropdown-toggle>
+            <span></span>颜色&nbsp;<i></i>
+          </div>
+          <ul class="invit-dropdown-colorList am-dropdown-content">
+          </ul>
+        </div>
+
+        <ul class="show-sel-color">
+        </ul>
+        <!-- 请柬颜色选择器 end -->
+      </div>
+
+      <div class="invitList-course">
+        <img src="../src/images/qingjian-xinshoujiaocheng .png" alt="">
+      </div>
+
+      <div class="xtb-invit-list xtb-invit-list-5column">
+        <ul class="xtb-cf">
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+          <li>
+            <span class="img-box">
+              <img src="../src/images/208ov8l.jpg" alt="">
+              <span class="xtb-invit-list-make-preview">
+                <a href="" class="preview">预览</a>
+                <a href="" class="make">立即制作</a>
+              </span>
+            </span>
+            <span class="xtb-invit-list-detail xtb-cf">
+              <h2 class="xtb-invit-list-title xtb-3dots">中秋节活动促销</h2>
+              <span class="xtb-invit-list-cost">
+                免费
+              </span>
+              <span class="xtb-invit-list-view am-icon-eye"> 12948</span>
+              <span class="xtb-invit-list-collect am-icon-heart"> 收藏</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="xtb-pager">
+          <ul class="am-pagination am-pagination-centered">
+            <li class="am-disabled"><a href="#">&lt;</a></li>
+            <li class="am-active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&gt;</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="am-g">
+    <div class="xtb-container">
+      <div class="xtb-bottom-newsList">
+        <div class="xtb-invitList-headline">
+          <span class="title">咨询推荐</span>
+        </div>
+        <ul class="xtb-cf">
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+          <li><a href="">· 中秋节要吃月饼吃月饼</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 列表页详情 end -->
+
+
+  <script>
+    // 颜色选择列表
+    var colors = ["fff", "67E2FF", "69A1FF", "6A55FF", "A155FF", "E16CB3", "FF835F", "FFC265", "FFE371", "C0E073", "9B9B9B", "0DD1FF", "0F67FF", "1E00FB", "7000FB", "DD1690", "FF3D05", "FF9E0A", "FFD118", "A4DC1C", "000", "0091B2", "0042B4", "1300A1", "4800A1", "9C0060", "AC0000", "AF6900", "BB9600", "729F00"]
+    // 供选择的颜色列表html
+    var colorList = ''
+    // 已选择的颜色数组,用这个合并成字符串进行请求
+    var selectedColor = []
+
+    colors.forEach(function(val) {
+      colorList += '<li><a href="javascript:void(0);" data-color="' + val + '" style="background:#' + val + '"></a></li>'
+    })
+    $('.invit-dropdown-colorList').html(colorList)
+
+    // 点击选择颜色
+    $('.invit-dropdown-colorList a').click(function(e) {
+      var color = $(e.target).attr('data-color')
+      // 颜色选择不能超过5个,已选择颜色不能选择
+      if(selectedColor.length < 5 && selectedColor.indexOf(color) == -1) {
+        selectedColor.push(color)
+        showSelectedColor(selectedColor)
+      }
+    })
+
+    // 删除颜色
+    $('.show-sel-color').click(function(e) {
+      if($(e.target).is('img')) {
+        var color = $(e.target).parent().attr('data-color')
+        var index = selectedColor.indexOf(color)
+        selectedColor.splice(index, 1)
+        showSelectedColor(selectedColor)
+      }
+    })
+
+    // 显示已选择的颜色
+    function showSelectedColor(colorList) {
+      var selectedColorHtml = ''
+      colorList.forEach(function(val) {
+        selectedColorHtml += `
+          <li class="color-item" data-color="${val}">
+            <span style="background:#${val};"></span>
+            <img class="del-color" src="../src/images/close.png" alt="">
+          </li>`
+      })
+      $('.show-sel-color').html(selectedColorHtml)
+    }
+    
+  </script>
+</body>
+</html>
