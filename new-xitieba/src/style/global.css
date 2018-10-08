@@ -467,7 +467,7 @@
   }
   .xtb-invit-list-detail {
     display: block;
-    padding: 6px 10px;
+    padding: 5px 10px;
   }
   .xtb-invit-list-title {
     float: left;
@@ -1558,3 +1558,100 @@
     line-height: 36px;
   }
 /* 登录注册 end */
+
+/* vip页样式 start */
+  .vip-top-img {
+    height: 506px;
+  }
+  .vip-content {
+    height: 1268px;
+    background-color: #f0f2f4;
+  }
+  .vip-list > div {
+    position: relative;
+    width: 300px;
+    height: 1209px;
+    float: left;
+    transform-origin: center bottom;
+    transition: all .4s ease;
+  }
+  .vip-list > div:not(.vip-function):hover {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+  .vip-list .vip-free {
+    height: 1210px;
+  }
+  .vip-list > div img {
+    position: absolute;
+    bottom: 0;
+    /*width: 100%;*/
+  }
+  .vip-list > div a {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 235px;
+    height: 45px;
+    background: no-repeat center;
+  }
+  .vip-list .vip-pay a {
+    background-image: url(../images/VIP-button1.png);
+  }
+  .vip-list .vip-business a {
+    background-image: url(../images/VIP-button2.png);
+  }
+
+  .vip-get-coupon {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .vip-get-coupon .title {
+    margin-bottom: 64px;
+    font-size: 32px;
+    font-weight: bold;
+    color:#363636;
+    text-align: center;
+  }
+  .vip-get-coupon .title span {
+    position: relative;
+  }
+  .vip-get-coupon .title span:before,
+  .vip-get-coupon .title span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #363636;
+  }
+  .vip-get-coupon .title span:before {
+    left: -24px;
+  }
+  .vip-get-coupon .title span:after {
+    right: -24px;
+  }
+  .vip-get-coupon .get-coupon-item {
+    float: left;
+    width: 400px;
+  }
+  .vip-get-coupon .get-coupon-item img {
+    float: left;
+    margin-right: 18px;
+  }
+  .vip-get-coupon .get-coupon-item h2 {
+    margin-bottom: 18px;
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #363636;
+  }
+  .vip-get-coupon .get-coupon-item p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #363636;
+  }
+/* vip页样式 end */

@@ -832,6 +832,7 @@
   }
   .articleDetail-right .other-article .next-article {
     float: right;
+    text-align: right;
   }
   .articleDetail-right .xtb-bottom-newsList li {
     width: 200px;
