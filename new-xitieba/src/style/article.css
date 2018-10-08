@@ -709,7 +709,7 @@
 
 /* 文章详情 start */
   .articleDetail-container h1 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     font-size: 32px;
     color: #363636;
     font-weight: bold;
@@ -737,6 +737,42 @@
 
   .articleDetail-left .share-box {
     margin-bottom: 30px;
+  }
+  .articleDetail-left .share-box span {
+    display: block;
+    margin-bottom: 18px;
+  }
+  .articleDetail-left .share-box a {
+    float: none;
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 10px;
+    background: no-repeat center/contain;
+  }
+  .articleDetail-left .share-box .bds_weixin {
+    background-image: url(../images/140-0.png)
+  }
+  .articleDetail-left .share-box .bds_sqq {
+    background-image: url(../images/139-0.png)
+  }
+  .articleDetail-left .share-box .bds_tsina {
+    background-image: url(../images/217-0.png)
+  }
+  .articleDetail-left .share-box .bds_qzone {
+    background-image: url(../images/134-0.png)
+  }
+  .articleDetail-left .share-box .bds_weixin:hover {
+    background-image: url(../images/140.png)
+  }
+  .articleDetail-left .share-box .bds_sqq:hover {
+    background-image: url(../images/139.png)
+  }
+  .articleDetail-left .share-box .bds_tsina:hover {
+    background-image: url(../images/217.png)
+  }
+  .articleDetail-left .share-box .bds_qzone:hover {
+    background-image: url(../images/134.png)
   }
 
 
