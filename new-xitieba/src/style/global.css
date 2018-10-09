@@ -1671,10 +1671,67 @@
   }
   .service-box .service-left {
     float: left;
+    border-right: 1px solid #eee;
+    text-align: left;
     width: 440px;
   }
+  .service-box .service-left .desc {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #707070;
+    background: #f2f2f2;
+  }
+  .service-box .question-content {
+    padding: 20px 12px;
+    height: 520px;
+    overflow: auto;
+  }
+  .service-main-item {
+    margin-bottom: 26px;
+  }
+  .service-box .head-pic {
+    float: left;
+  }
+  .service-box .service-main-item .main-box {
+    float: right;
+    width: 348px;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 16px rgba(0,0,0,.2);
+  }
+  .service-box .service-main-item:first-of-type h2 {
+    margin-bottom: 10px;
+  }
+  .service-box .service-main-item:first-of-type p {
+    cursor: pointer;
+  }
+  .service-box .service-main-item:first-of-type p:hover {
+    color: #5795ff;
+  }
+  .service-box .service-main-item h2 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #363636;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  .service-box .service-main-item p {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #363636;
+    line-height: 1.4;
+  }
+  .service-box .service-main-item .main-box > a {
+    font-size: 14px;
+    color: #5795ff;
+  }
+
+
   .service-box .service-right {
     float: right;
-    width: 440px;
+    width: 360px;
   }
 /* 客服弹框 end */
