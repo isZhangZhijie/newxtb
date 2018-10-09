@@ -332,24 +332,23 @@
     border-radius: 3px;
     white-space: nowrap;
   }
-  .xtb-invit-badge a:nth-of-type(1) {
-    background-color: #ffafc8;
+  .xtb-invit-badge a:first-of-type {
     margin-bottom: 14px;
   }
-  .xtb-invit-badge a:nth-of-type(2) {
+  .xtb-invit-badge a:nth-of-type(5n+1) {
+    background-color: #ffafc8;
+  }
+  .xtb-invit-badge a:nth-of-type(5n+2) {
     background-color: #ddafff;
   }
-  .xtb-invit-badge a:nth-of-type(3) {
+  .xtb-invit-badge a:nth-of-type(5n+3) {
     background-color: #94c6ff;
   }
-  .xtb-invit-badge a:nth-of-type(4) {
+  .xtb-invit-badge a:nth-of-type(5n+4) {
     background-color: #54ded9;
   }
-  .xtb-invit-badge a:nth-of-type(5) {
+  .xtb-invit-badge a:nth-of-type(5n+5) {
     background-color: #ffafaf;
-  }
-  .xtb-invit-badge a:nth-of-type(6) {
-    background-color: #ffafc8;
   }
 /* 请柬小标签 end */
 
@@ -812,6 +811,10 @@
     height: 68px;
     border-bottom: 2px solid #d8d8d8;
   }
+  .xtb-header [class*="am-"] {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .header-nav li a {
     display: block;
     padding: 0 10px;
@@ -860,8 +863,11 @@
   }
   .xtb-header .login-box>li {
     float: left;
-    color: #363636;
+    color: #707070;
     padding: 0 10px;
+  }
+  .xtb-header .login-box>li:last-of-type {
+    padding-right: 0;
   }
   .xtb-header .login-box .login-down {
     position: relative;
@@ -1662,5 +1668,13 @@
 /* 客服弹框 start */
   .service-box .top-bar {
     height: 48px;
+  }
+  .service-box .service-left {
+    float: left;
+    width: 440px;
+  }
+  .service-box .service-right {
+    float: right;
+    width: 440px;
   }
 /* 客服弹框 end */
