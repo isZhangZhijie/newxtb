@@ -39,9 +39,6 @@
     color: inherit;
     text-decoration: none;
   }
-  a:hover {
-    color: #fe6265;
-  }
 
   /* 清除浮动 */
   .xtb-cf:after {
@@ -820,7 +817,7 @@
     padding: 0 10px;
     height: 68px;
     line-height: 68px;
-    font-size: 16px;
+    font-size: 14px;
     color: #707070;
   }
   .header-nav li i {
@@ -844,6 +841,7 @@
   .xtb-header .login-box {
     line-height: 66px;
     margin-right: 0;
+    font-size: 14px;
   }
   .xtb-header .login-box button {
     width: 106px;
@@ -851,7 +849,7 @@
     border: 1px solid #fe6265;
     border-radius: 2px;
     color: #fe6265;
-    font-size: 16px;
+    font-size: 14px;
     outline: none;
     background-color: #fff;
     transition: all 0.1s linear;
@@ -1003,6 +1001,9 @@
     width: 100%;
     height: 100%;
   }
+  .sidebar a:hover {
+    color: inherit;
+  }
   .sidebar>div {
     /*float: right;*/
     margin-bottom: 12px;
@@ -1129,14 +1130,15 @@
     position: relative;
     float: right;
     /*padding: 0 10px;*/
-    width: 64px;
+    width: 70px;
     text-align: center;
   }
   .xtb-top-search-right-btn li img {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 5px;
   }
   .xtb-top-search-right-btn span {
+    display: block;
     font-size: 10px;
     color: #363636;
     width: 100%;
@@ -1655,3 +1657,10 @@
     color: #363636;
   }
 /* vip页样式 end */
+
+
+/* 客服弹框 start */
+  .service-box .top-bar {
+    height: 48px;
+  }
+/* 客服弹框 end */

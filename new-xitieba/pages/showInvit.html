@@ -17,16 +17,17 @@
   <script src="{{asset('card/card-view.js')}}"></script> -->
 
 
-  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-  <link href="https://cdn.bootcss.com/amazeui/2.7.2/css/amazeui.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/css/amazeui.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/amazeui/2.7.2/js/amazeui.js"></script>
 
-  <link href="https://cdn.bootcss.com/layer/3.1.0/theme/default/layer.css" rel="stylesheet">
-  <script src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/layer/2.3/layer.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/layer/2.3/skin/layer.css" rel="stylesheet">
+
+
 
   <link rel="stylesheet" href="../src/style/global.css">
 
@@ -45,14 +46,14 @@
       <div class="am-u-sm-10">
         <ul class="login-box am-topbar-right">
           <!-- 未登录 -->
-          <!-- <li>
+          <li>
             <button
               class="login"
               data-am-modal="{target: '#index-login-wechat', width: 960, height: 680}"
             >登录 / 注册</button>
-          </li> -->
+          </li>
           <!-- 已登录 -->
-          <li class="login-down">
+          <!-- <li class="login-down">
             <span class="login-down-menu">
               <span class="img-box"><img src="../src/images/140.png" alt=""></span>欢迎<i></i>
             </span>
@@ -82,7 +83,7 @@
           </li>
           <li>
             <a href=""><button class="cart">购物车 (0)</button></a>
-          </li>
+          </li> -->
         </ul>
 
         <ul class="header-nav am-nav am-nav-pills am-topbar-left">
@@ -533,7 +534,13 @@
       <a href="">我的<br>喜帖</a>
     </div>
     <div class="chatBtn">
-      <a href=""><i></i>客服</a>
+      <!-- <a href=""><i></i>客服</a> -->
+      <a
+        class=""
+        data-am-modal="{target: '#service-box', width: 800, height: 600}"
+        data-am-modal-close
+        href="javascript:;"
+      ><i></i>客服</a>
     </div>
     <div class="sidebar-list">
       <ul>
@@ -757,6 +764,23 @@
     </div>
   </div>
   <!-- 登录注册弹出框 end -->
+
+
+  <!-- 客服弹框 start -->
+  <div class="service-box am-modal am-modal-no-btn" tabindex="-1" id="service-box">
+    <div class="am-modal-dialog">
+      <div class="am-modal-bd">
+        <div class="img-box top-bar">
+          <img src="../src/images/kefu=Daohang.png" alt="">
+        </div>
+        <div class="service-left">
+          
+        </div>
+        <div class="service-right"></div>
+      </div>
+    </div>
+  </div>
+  <!-- 客服弹框 end -->
 
 
 
