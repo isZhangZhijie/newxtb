@@ -369,7 +369,7 @@
   <script>
     // 分页器
     var pageNo = 1
-    var pageSize = 1476
+    var pageSize = 12
     setPager()
     //点击页码跳转
     function jump(id) {
@@ -380,18 +380,14 @@
     }
     //点击下一页
     function jumpNext() {
-      if(pageNo == pageSize) {
-        return
-      } else {
+      if(pageNo < pageSize) {
         pageNo += 1 //修改当前页码
         jump(pageNo) //跳转
       }
     }
     //点击上一页
     function jumpPrev() {
-      if(pageNo == 1) {
-        return
-      } else {
+      if(pageNo > 1) {
         pageNo -= 1;
         jump(pageNo)
       }
@@ -401,23 +397,26 @@
       var pagerHtml = ''
       pagerHtml += '<div class="pager-wrapper">'
       if(pageSize > 1) {
-        pagerHtml += '<div class="pager-box clearfix">'
+        pagerHtml += '<div class="pager-box">'
                   + '<span class="pager-prev" onclick="jumpPrev()">&lt;</span>'
         for(var i = 1; i <= pageSize; i++) {
           if(i == pageNo) {
             // 页码数与i相同
             pagerHtml += '<span class="pager-cur">' + i + '</span>'
-          } else if(pageNo <= 5 && i <= 7) {
+          } else if(
+            (pageNo <= 5 && i <= 7) ||
+            (i >= pageNo - 2 && i <= pageNo + 2) ||
+            (pageNo >= pageSize - 4 && i >= pageSize - 6 ) ||
+            (i == 1 || i == pageSize || pageSize <= 9)
+          ) {
             pagerHtml += '<span onclick="jump(' + i + ')">' + i + '</span>'
-          } else if(pageSize<=9 || i==1 || i==pageSize || (i>=pageNo-2&&i<=pageNo+2)) {
-            pagerHtml += '<span onclick="jump(' + i + ')">' + i + '</span>'
-          } else if(pageNo >= pageSize - 4 && i >= pageSize - 6) {
-            pagerHtml += '<span onclick="jump(' + i + ')">' + i + '</span>'
-          } else {
-            if(pageNo <= 5 && i == 8) pagerHtml += '<span class="pager-spr">…</span>'
-            if(pageNo > 5 && i == pageNo - 3) pagerHtml += '<span class="pager-spr">…</span>'
-            if(pageNo > 5 && i == pageNo + 3) pagerHtml += '<span class="pager-spr">…</span>'
-            if(pageNo > pageSize - 4 && i == pageSize - 7) pagerHtml += '<span class="pager-spr">…</span>'
+          } else if(
+            (pageNo <= 5 && i == 8) ||
+            (pageNo >= pageSize - 5 && i == pageSize - 7) ||
+            (pageNo > 5 && pageNo < pageSize - 4 && i == pageNo - 3) ||
+            (pageNo > 5 && pageNo < pageSize - 4 && i == pageNo + 3)
+          ) {
+            pagerHtml += '<span class="pager-spr">…</span>'
           }
         }
         pagerHtml += '<span class="pager-next" onclick="jumpNext()">&gt;</span>'
