@@ -1733,5 +1733,122 @@
   .service-box .service-right {
     float: right;
     width: 360px;
+    margin: 0;
+  }
+  .service-box .service-right .service-sel-bar {
+    /*height: 44px;
+    border-bottom: 1px solid #bebebe;*/
+  }
+  .service-box .service-sel-bar li {
+    float: left;
+    width: 90px;
+    height: 44px;
+    border-bottom: 1px solid #bebebe;
+    line-height: 43px;
+    font-size: 14px;
+    color: #472d22;
+    cursor: pointer;
+  }
+  .service-sel-bar li.am-active {
+    border-bottom: 5px solid #fe6265;
+  }
+  .service-sel-bar li:hover {
+    border-bottom: 5px solid #fe6265;
+  }
+  .service-sel-bar li i {
+    display: inline-block;
+    margin-right: 4px;
+    vertical-align: -2px;
+    width: 14px;
+    height: 14px;
+    background: no-repeat center/contain;
+  }
+  .service-sel-bar .helper i {
+    background-image: url(../images/kefu-top1-0.png);
+  }
+  .service-sel-bar .teaching i {
+    background-image: url(../images/kefu-top2-0.png);
+  }
+  .service-sel-bar .problem i {
+    background-image: url(../images/kefu-top3-0.png);
+  }
+  .service-sel-bar .recommend i {
+    background-image: url(../images/kefu-top4-0.png);
+  }
+
+  .service-sel-bar .helper.am-active i {
+    background-image: url(../images/kefu-top1-1.png);
+  }
+  .service-sel-bar .teaching.am-active i {
+    background-image: url(../images/kefu-top2-1.png);
+  }
+  .service-sel-bar .problem.am-active i {
+    background-image: url(../images/kefu-top3-1.png);
+  }
+  .service-sel-bar .recommend.am-active i {
+    background-image: url(../images/kefu-top4-1.png);
+  }
+
+  .service-box .show-sel-service {
+    border: 0;
+    height: 508px;
+  }
+  .service-box .show-sel-service>div {
+    height: 100%;
+  }
+  .service-box .show-helper {
+    background: #ececec;
+  }
+  .service-box .show-helper h2 {
+    line-height: 2;
+    font-size: 20px;
+    color: #363636;
+    font-weight: bold;
+  }
+  .service-box .show-helper p {
+    margin-bottom: 20px;
+    line-height: 2;
+    font-size: 18px;
+    color: #707070;
+  }
+  .service-box .show-teaching img {
+    padding-top: 20px;
+  }
+  .service-box .show-teaching p {
+    /*margin-bottom: 20px;*/
+    line-height: 1.6;
+    font-size: 16px;
+    color: #363636;
+  }
+  .service-box .show-problem .problem-list a {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #363636;
+    line-height: 1.8;
+  }
+  .service-box .show-problem .problem-list a:visited {
+    color: #c9c9c9;
+  }
+  .service-box .show-problem .problem-list a:hover {
+    color: #5795ff;
+  }
+  .service-box .show-problem p {
+    font-size: 14px;
+    color: #c9c9c9;
+    line-height: 1.6;
+  }
+  .service-box .show-recommend {
+    text-align: left;
+    font-size: 0;
+  }
+  .service-box .show-recommend h2 {
+    margin-bottom: 16px;
+    font-size: 24px;
+    color: #363636;
+    font-weight: bold;
+  }
+  .service-box .show-recommend img {
+    margin-right: 12px;
   }
 /* 客服弹框 end */

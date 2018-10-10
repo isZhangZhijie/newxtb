@@ -401,7 +401,7 @@
       var pagerHtml = ''
       pagerHtml += '<div class="pager-wrapper">'
       if(pageSize > 1) {
-        pagerHtml +=  '<div class="pager-box clearfix">'
+        pagerHtml += '<div class="pager-box clearfix">'
                   + '<span class="pager-prev" onclick="jumpPrev()">&lt;</span>'
         for(var i = 1; i <= pageSize; i++) {
           if(i == pageNo) {
@@ -420,10 +420,10 @@
             if(pageNo > pageSize - 4 && i == pageSize - 7) pagerHtml += '<span class="pager-spr">…</span>'
           }
         }
-        pagerHtml +=  '<span class="pager-next" onclick="jumpNext()">&gt;</span>'
-                  +  '</div>'
-                  +  '</div>'
+        pagerHtml += '<span class="pager-next" onclick="jumpNext()">&gt;</span>'
+                  + '</div>'
       }
+      pagerHtml += '</div>'
       
       $('#pager').html(pagerHtml)
     }
