@@ -1095,7 +1095,7 @@
     right: 10px;
     width: 0;
     height: 0;
-    box-shadow: 0 0 100px 60px rgba(0,0,0,.4);
+    box-shadow: 0 0 100px 60px #ffdcdc;
   }
   .sidebar .head-animation>img {
     position: absolute;
@@ -1116,6 +1116,9 @@
   .xtb-top-search-left-img {
     height: 100px;
     line-height: 100px;
+  }
+  #top-search-click {
+    cursor: pointer;
   }
   .xtb-top-hot-search {
     font-size: 12px;
@@ -1663,7 +1666,6 @@
     color: #363636;
   }
 /* vip页样式 end */
-
 
 /* 客服弹框 start */
   .service-box .top-bar {

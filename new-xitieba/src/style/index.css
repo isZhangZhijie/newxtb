@@ -198,6 +198,7 @@
 
   .xtb-index-newsList {
     float: left;
+    margin-bottom: 40px;
     width: 464px;
     height: 825px;
     padding: 20px 0 18px 18px;

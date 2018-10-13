@@ -663,6 +663,7 @@
     width: 100%;
     height: 120px;
     background: linear-gradient(to bottom, rgba(138,31,91,.7), rgba(226,50,44,.7));
+    z-index: 100;
   }
   .articleList-bottom-ad-box {
     position: relative;
@@ -826,6 +827,10 @@
     text-indent: 2em;
     margin: 16px 0;
     line-height: 1.6;
+  }
+  .articleDetail-right .articleDetail-content p img {
+    position: relative;
+    left: -2em;
   }
   .articleDetail-right .view-num {
     display: block;
@@ -1135,8 +1140,8 @@
     margin-right: 0;
   }
   .zhuanti-minor-item .zhuanti-minor-title {
-    margin-bottom: 24px;
-    font-size: 18px;
+    margin-bottom: 18px;
+    font-size: 20px;
     color: #363636;
     font-weight: bold;
   }
@@ -1146,10 +1151,11 @@
   .zhuanti-minor-item .zhuanti-minor-title span {
     display: inline-block;
     margin-right: 10px;
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     text-align: center;
-    line-height: 16px;
+    line-height: 19px;
+    vertical-align: 2px;
     font-size: 14px;
     border: 1px solid #363636;
     border-radius: 50%;
@@ -1157,8 +1163,10 @@
   .zhuanti-minor-item li {
     float: left;
     width: 100px;
+    height: 40px;
     margin-right: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+    line-height: 1.4;
   }
   .zhuanti-minor-item li:nth-of-type(3n) {
     margin-right: 0;
