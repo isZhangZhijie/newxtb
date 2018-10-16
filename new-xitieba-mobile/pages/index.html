@@ -11,14 +11,12 @@
 
 
   <script src="../src/plugin/jquery-3.3.1.min.js"></script>
-  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+  <script src="../src/plugin/flexible.js"></script>
 
 
   <link href="../src/plugin/amazeui/css/amazeui.min.css" rel="stylesheet">
   <script src="../src/plugin/amazeui/js/amazeui.min.js"></script>
 
-  <!-- <link rel="stylesheet" href="../src/plugin/bootstrap/css/bootstrap.min.css">
-  <script src="../src/plugin/bootstrap/js/bootstrap.min.js"></script> -->
 
   <link href="../src/plugin/swiper/swiper.min.css" rel="stylesheet">
   <script src="../src/plugin/swiper/swiper.min.js"></script>
@@ -33,7 +31,7 @@
     <!-- 顶部轮播 start -->
     <div class="index-header">
       <div class="xtb-header color-header">
-        <span class="header-item">
+        <span class="header-item header-left">
           <a href=""><img src="../src/images/index_logo.png" alt=""></a>
         </span>
         <span class="header-item header-right">
@@ -70,35 +68,35 @@
         <div class="swiper-container gallery-thumbs">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""></a>
+              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""><span>免费</span></a>
             </div>
             <div class="swiper-slide">
-              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""></a>
+              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""><span>免费</span></a>
             </div>
             <div class="swiper-slide">
-              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""></a>
+              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""><span>免费</span></a>
             </div>
             <div class="swiper-slide">
-              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""></a>
+              <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""><span>免费</span></a>
             </div>
           </div>
         </div>
         <div class="swiper-container gallery-text">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <h2>中秋中秋中秋中秋中秋中秋中秋中秋中秋</h2>
+              <h2>1中秋中秋中秋中秋中秋中秋中秋中秋中秋</h2>
               <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
             </div>
             <div class="swiper-slide">
-              <h2>哈哈哈哈哈哈哈哈</h2>
+              <h2>2哈哈哈哈哈哈哈哈</h2>
               <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
             </div>
             <div class="swiper-slide">
-              <h2>哦哦哦噢噢哦哦哦</h2>
+              <h2>3哦哦哦噢噢哦哦哦</h2>
               <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
             </div>
             <div class="swiper-slide">
-              <h2>嗯嗯嗯嗯嗯嗯嗯嗯</h2>
+              <h2>4嗯嗯嗯嗯嗯嗯嗯嗯</h2>
               <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
             </div>
           </div>
@@ -322,10 +320,6 @@
       },
     })
 
-    // var invitTemplateSlide = new Swiper ('.invit-template-slide .swiper-container', {
-    //   loop: true, // 循环模式选项
-    //   slidesPerView: 'auto',
-    // })
     var invitTemplateSlide = new Swiper('.invit-template-slide .gallery-thumbs', {
       // autoplay:true,
       loop: true,
@@ -349,7 +343,6 @@
           // console.log(this.slides)
           for (var i = 0; i < this.slides.length; i++) {
             var slide = this.slides.eq(i)
-            // console.log(this.slides[i].progress)
             var slideProgress = this.slides[i].progress;
             var prevIndent = 4 == i ? .3228 : .0898;
             var scale = Math.abs(slideProgress + prevIndent) < 1 ? (1 - Math.abs(slideProgress + prevIndent)) * .1 + 1 : 1;
@@ -367,14 +360,17 @@
             this.slides.eq(a).find("a").transition(speed)
           }
         },
-        // touchMove: function() {
-        //   // console.log(this.progress)
-        //   // 当显示第一张图时，向右滑动时，galleryTop不变化，因为左边没图了
-        //   // 若galleryTop跟着右滑，空出位置为背景色
-        //   this.controller.control = this.progress < .01 ? "" : galleryTop;
-        // }
       }
     });
+    var galleryText = new Swiper('.gallery-text', {
+      effect: "fade",
+      loop: true,
+      slidesPerView: "auto",
+      fadeEffect: {
+        crossFade: true,
+      }
+    });
+    invitTemplateSlide.controller.control = galleryText;
 
 
     $('.item-scroll').each(function(key, val){

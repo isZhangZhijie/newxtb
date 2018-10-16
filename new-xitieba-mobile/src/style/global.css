@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
   }
   body {
     line-height: 1;
@@ -87,12 +88,53 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 0.4rem;
+    border-bottom: 1px solid #b3b3b3;
     height: 1.333333rem;
+    font-size: 36px;
+    color: #363636;
+    background-color: #fff;
+  }
+  .xtb-header .header-left {
+    margin-right: 0.4rem;
+  }
+  .xtb-header .header-center {
+    position: relative;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+  }
+  .xtb-header .header-center input {
+    padding: 0 0.4rem;
+    width: 100%;
+    height: 0.906667rem;
+    border: 0;
+    border-radius: 0.053333rem;
+    font-size: 26px;
+    font-weight: normal;
+    color: #9fa7b8;
+    background: #e9edf0;
+  }
+  .xtb-header .header-center img {
+    position: absolute;
+    left: 0.4rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .xtb-header .header-center input:placeholder {
+    font-size: 26px;
+    color: #9fa7b8;
   }
   .xtb-header .header-right {
+    margin-left: 0.4rem;
     font-size: 28px;
+    font-weight: bold;
   }
 
+  .color-header {
+    border-bottom: 0;
+    background-color: transparent;
+  }
   .color-header .header-right {
     color: #fff;
   }
@@ -162,8 +204,6 @@
   .footer li:nth-of-type(4).active i {
     background-image: url(../images/4-1.png)
   }
-
-
 /* 全局通用样式 end */
 
 /* 首页样式 start */
@@ -236,9 +276,9 @@
   }
 
   .invit-template-slide .gallery-thumbs {
-    padding: 0.32rem 0;
+    padding: 0.32rem 0 0.32rem 0.64rem;
     margin-bottom: 0.213333rem;
-    overflow: visible;
+    /*overflow: visible;*/
   }
   .invit-template-slide .gallery-thumbs .swiper-slide {
     margin-right: 30px;
@@ -250,6 +290,16 @@
     height: 100%;
     border-radius: 0.16rem;
     overflow: hidden;
+  }
+  .invit-template-slide a span {
+    position: absolute;
+    bottom: 0.64rem;
+    left: 0;
+    padding: 0.186667rem 0.4rem 0.186667rem 0.213333rem;
+    font-size: 26px;
+    color: #363636;
+    border-radius: 0 0.64rem 0.64rem 0;
+    background: #ffde3b;
   }
 
   .invit-template-slide .gallery-text h2 {
@@ -365,4 +415,293 @@
     right: 0.4rem;
     z-index: 10;
   }
-/* 首页样式 end 
+/* 首页样式 end */
+
+/* 推荐专题 start */
+  .recommend-topic {
+    padding-top: 0.4rem;
+  }
+  .recommend-topic .topic-item {
+    margin-bottom: 0.533333rem;
+    border-radius: 0.16rem;
+    overflow: hidden;
+    box-shadow: 0 0.106667rem 0.4rem rgba(0,0,0,.2);
+  }
+  .recommend-topic img {
+    width: 100%;
+  }
+  .recommend-topic span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.066667rem;
+    font-size: 32px;
+    color: #363636;
+    background: #fff;
+  }
+/* 推荐专题 end */
+
+
+/* 请柬分类页 start */
+  .invit-classify .invit-sel-bar {
+    display: flex;
+    background: #fff;
+  }
+  .invit-classify .invit-sel-bar li {
+    position: relative;
+    flex-grow: 1;
+  }
+  .invit-classify .invit-sel-bar li:first-of-type:after {
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 0;
+    height: 0.906667rem;
+    border-right: 1px solid #b2b2b2;
+  }
+  .invit-classify .invit-sel-bar a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.173333rem;
+    font-size: 32px;
+    font-weight: bold;
+    color: #9c9c9c;
+  }
+  .invit-classify .invit-sel-bar .am-active a {
+    color: #363636;
+    background: url(../images/select.png) no-repeat center bottom;
+  }
+  .invit-classify .invit-show {
+    border: 0;
+  }
+  .invit-classify .invit-show .am-tab-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.4rem;
+  }
+  .invit-classify .invit-item {
+    position: relative;
+    padding-top: 0.346667rem;
+    margin-bottom: 0.266667rem;
+    width: 2.933333rem;
+    border-radius: 0.16rem;
+    overflow: hidden;
+    background: no-repeat center top;
+  }
+  .invit-classify .invit-item:nth-of-type(6n+1) {
+    background-image: url(../images/class_bg1.png)
+  }
+  .invit-classify .invit-item:nth-of-type(6n+2) {
+    background-image: url(../images/class_bg2.png)
+  }
+  .invit-classify .invit-item:nth-of-type(6n+3) {
+    background-image: url(../images/class_bg3.png)
+  }
+  .invit-classify .invit-item:nth-of-type(6n+4) {
+    background-image: url(../images/class_bg4.png)
+  }
+  .invit-classify .invit-item:nth-of-type(6n+5) {
+    background-image: url(../images/class_bg5.png)
+  }
+  .invit-classify .invit-item:nth-of-type(6n+6) {
+    background-image: url(../images/class_bg6.png)
+  }
+  .invit-classify .invit-item img {
+    width: 100%;
+    border-radius: 0.16rem;
+  }
+  .invit-classify .invit-item p {
+    position: absolute;
+    bottom: 0.266667rem;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .invit-classify .invit-item span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 0.6rem 0.6rem rgba(0,0,0,.4);
+  }
+/* 请柬分类页 end */
+
+/* 请柬排序页 start */
+  .select-bar {
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+  .sort-selector {
+    position: relative;
+    display: flex;
+    background: #fff;
+  }
+  .sort-selector:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 0;
+    height: .64rem;
+    border-right: 1px solid #777;
+  }
+  .sort-selector > div {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.173333rem;
+    font-size: 32px;
+    font-weight: bold;
+    color: #707070;
+  }
+  .sort-selector > div i {
+    width: 25px;
+    height: 14px;
+    margin-left: 6px;
+    background: url(../images/cardlist_selectClose.png) no-repeat center center/contain;
+  }
+  .sort-selector > div.open {
+    color: #363636;
+  }
+  .sort-selector > div.open i {
+    background-image: url(../images/cardlist_selectOpen.png);
+  }
+  .select-bar .slide {
+    display: none;
+    position: absolute;
+    top: 110%;
+    background: #fff;
+    width: 100%;
+    z-index: 10;
+  }
+  .invit-sort ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .invit-sort li {
+    display: flex;
+    align-items: center;
+    height: 1.333333rem;
+    font-size: 28px;
+    color: #9c9c9c;
+  }
+  .invit-sort li:last-of-type {
+    margin-right: 0.8rem;
+  }
+  .invit-sort li.active {
+    color: #ff4040;
+  }
+  .invit-sort li i {
+    margin-right: 0.266667rem;
+    width: 0.373333rem;
+    height: 0.373333rem;
+    background: no-repeat center/contain;
+  }
+  .invit-sort .default-sort i {
+    background-image: url(../images/cardlist_sort1-0.png)
+  }
+  .invit-sort .recommend-sort i {
+    background-image: url(../images/cardlist_sort2-0.png)
+  }
+  .invit-sort .hot-sort i {
+    background-image: url(../images/cardlist_sort3-0.png)
+  }
+  .invit-sort .newest-sort i {
+    background-image: url(../images/cardlist_sort4-0.png)
+  }
+  .invit-sort .default-sort.active i {
+    background-image: url(../images/cardlist_sort1-1.png)
+  }
+  .invit-sort .recommend-sort.active i {
+    background-image: url(../images/cardlist_sort2-1.png)
+  }
+  .invit-sort .hot-sort.active i {
+    background-image: url(../images/cardlist_sort3-1.png)
+  }
+  .invit-sort .newest-sort.active i {
+    background-image: url(../images/cardlist_sort4-1.png)
+  }
+  .invit-color ul {
+    display: flex;
+    padding-bottom: .266667rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .invit-color li {
+    position: relative;
+    margin: .266667rem .2rem 0;
+    width: 1.066667rem;
+    height: 1.066667rem;
+    font-size: .64rem;
+    color: #fff;
+  }
+  .invit-color li i {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: .533333rem;
+    height: .533333rem;
+    line-height: .533333rem;
+    text-align: center;
+    background: red;
+  }
+  .invit-color li.active i {
+    display: block;
+  }
+
+
+  .bar-img img {
+    width: 100%;
+  }
+
+  .invit-sort-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .invit-sort-list li {
+    margin-bottom: 0.533333rem;
+  }
+  .invit-sort-list a {
+    display: block;
+    width: 4.32rem;
+  }
+  .invit-sort-list img {
+    width: 100%;
+  }
+  .invit-sort-list a > span {
+    position: relative;
+    display: block;
+    margin-bottom: 0.133333rem;
+    border-radius: 0.16rem;
+    overflow: hidden;
+  }
+  .invit-sort-list .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.133333rem;
+    padding-left: 0.266667rem;
+    border-radius: 0 0 0 0.8rem;
+    font-size: 28px;
+    color: #fff;
+  }
+  .invit-sort-list p {
+    font-size: 0.373333rem;
+    color: #363636;
+  }
+/* 请柬排序页 end */
