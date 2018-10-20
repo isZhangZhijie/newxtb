@@ -7,7 +7,7 @@
   }
   body {
     line-height: 1;
-    padding-bottom: 1.413333rem;
+    padding-bottom: 1.413333rem!important;
   }
   table {
     border-collapse: collapse;
@@ -321,7 +321,7 @@
 
 /* 常见问题弹框 start */
   .service-box .am-modal-dialog {
-    width: 9.2rem;
+    width: 8.8rem;
     border-radius: 0.586667rem;
     padding-top: 0.4rem;
   }
@@ -356,20 +356,15 @@
   }
   .service-box .show-problem .problem-title {
     color: #5795ff;
-    font-size: 0.48rem;
+    font-size: 0.5rem;
+    font-weight: bold;
     line-height: 1.6;
     margin-bottom: 0.48rem;
     text-align: center;
   }
   .service-box .show-problem p {
-    font-size: 0.4rem;
-    line-height: 1.6;
-    margin-bottom: 0.48rem;
-  }
-  .service-box .show-problem span {
-    display: block;
-    color: #363636;
     font-size: 0.48rem;
+    line-height: 1.6;
     margin-bottom: 0.48rem;
   }
   .service-box .show-problem a {
@@ -415,6 +410,11 @@
     top: 0.4rem;
     left: 0.4rem;
   }
+  .service-box .close-service-box {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+  }
 /* 常见问题弹框 end */
 
 /* 首页样式 start */
@@ -426,12 +426,13 @@
     background: url(../images/index_topBG.png) no-repeat center top/100%;
   }
   .index-header .img-box {
-    width: 9.2rem;
-    height: 4.6rem;
+    /*width: 9.2rem;*/
+    height: 4.52rem;
   }
   .index-header .swiper-container {
     border-radius: 0.24rem;
     overflow: hidden;
+    border: 0.106667rem solid #fff;
     box-shadow: 0 0.04rem 0.4rem rgba(255,52,52,.4);
   }
   .index-header .swiper-pagination {
@@ -451,14 +452,14 @@
     opacity: 1;
   }
   .index-header .white-border {
-    position: absolute;
+    /*position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: 0.106667rem solid #fff;
     border-radius: 0.24rem;
-    z-index: 10;
+    z-index: 10;*/
   }
 
   .index-item {
@@ -487,8 +488,8 @@
   }
 
   .invit-template-slide .gallery-thumbs {
-    padding: 0.32rem 0 0.32rem 0.64rem;
-    margin-bottom: 0.213333rem;
+    padding: 0.32rem 0 1.4rem 0.64rem;
+    /*margin-bottom: 1.4rem;*/
     /*overflow: visible;*/
   }
   .invit-template-slide .gallery-thumbs .swiper-slide {
@@ -512,8 +513,40 @@
     border-radius: 0 0.64rem 0.64rem 0;
     background: #ffde3b;
   }
+  .invit-template-slide .invit-template-slide-pagination {
+    height: 0.933333rem;
+    text-align: left;
+    bottom: 0;
+  }
+  .invit-template-slide .invit-template-slide-pagination>.swiper-pagination-bullet {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    padding-left: 0.4rem;
+    width: 100%;
+    height: 0.933333rem;
+    border-radius: 0;
+    background-color: transparent;
+    transition: opacity .2s linear;
+  }
+  .invit-template-slide .invit-template-slide-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  .invit-template-slide .invit-template-slide-pagination h2 {
+    margin-bottom: 0.186667rem;
+    font-size: 0.346667rem;
+    color: #363636;
+    font-weight: bold;
+  }
+  .invit-template-slide .invit-template-slide-pagination p {
+    padding-right: 0.266667rem;
+    font-size: 0.293333rem;
+    color: #a1a7b5;
+  }
 
-  .invit-template-slide .gallery-text h2 {
+/*  .invit-template-slide .gallery-text h2 {
     margin-bottom: 0.186667rem;
     font-size: 0.346667rem;
     color: #363636;
@@ -523,7 +556,7 @@
     padding-right: 0.266667rem;
     font-size: 0.266667rem;
     color: #a1a7b5;
-  }
+  }*/
 
   .item-scroll .swiper-slide {
     float: left;
@@ -588,6 +621,19 @@
   }
   .article-scroll .swiper-slide {
     width: 5.84rem;
+  }
+  .mini-pro-qr-code .am-modal-dialog {
+    width: 8.266667rem;
+    background-color: transparent;
+  }
+  .mini-pro-qr-code .am-modal-dialog img {
+    width: 100%;
+  }
+  .mini-pro-qr-code .close-qr-code {
+    position: absolute;
+    top: 0;
+    right: 0.4rem;
+    color: #fff;
   }
 
 
@@ -1085,7 +1131,8 @@
     text-indent: 2em;
   }
   .article-detail .article-content p img {
-    text-indent: -2em;
+    position: relative;
+    left: -1em;
   }
 
   .readall-box {
@@ -1106,7 +1153,7 @@
     display: inline-block;
     padding-bottom: 0.7rem;
     font-size: 0.373333rem;
-    color: #c9c9c9;
+    color: #363636;
     background: url(../images/article_More.png) no-repeat center bottom/contain;
   }
 

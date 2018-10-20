@@ -81,26 +81,8 @@
               <a href="" class="img-box"><img src="../src/images/1ld7rcc.jpg" alt=""><span>免费</span></a>
             </div>
           </div>
-        </div>
-        <div class="swiper-container gallery-text">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <h2>1中秋中秋中秋中秋中秋中秋中秋中秋中秋</h2>
-              <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
-            </div>
-            <div class="swiper-slide">
-              <h2>2哈哈哈哈哈哈哈哈</h2>
-              <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
-            </div>
-            <div class="swiper-slide">
-              <h2>3哦哦哦噢噢哦哦哦</h2>
-              <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
-            </div>
-            <div class="swiper-slide">
-              <h2>4嗯嗯嗯嗯嗯嗯嗯嗯</h2>
-              <p><span>#幼儿</span><span>#青年</span><span>#幼儿</span><span>#幼儿</span></p>
-            </div>
-          </div>
+
+          <div class="invit-template-slide-pagination swiper-pagination"></div>
         </div>
       </div>
     </div>
@@ -204,11 +186,24 @@
       <div class="item-scroll zhuanti-scroll swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <a href=""><img src="../src/images/index_XCX1.png" alt=""></a>
+            <a href="javascript:;" data-am-modal="{target: '#mini-pro-qr-code1'}"><img src="../src/images/index_XCX1.png" alt=""></a>
           </div>
           <div class="swiper-slide">
-            <a href=""><img src="../src/images/index_XCX2.png" alt=""></a>
+            <a href="javascript:;" data-am-modal="{target: '#mini-pro-qr-code2'}"><img src="../src/images/index_XCX2.png" alt=""></a>
           </div>
+        </div>
+      </div>
+
+      <div class="mini-pro-qr-code am-modal am-modal-no-btn" tabindex="-1" id="mini-pro-qr-code1">
+        <div class="am-modal-dialog">
+          <img src="../src/images/qr-code-jiqiren.png" alt="">
+          <span class="close-qr-code am-icon-close am-icon-md" data-am-modal-close></span>
+        </div>
+      </div>
+      <div class="mini-pro-qr-code am-modal am-modal-no-btn" tabindex="-1" id="mini-pro-qr-code2">
+        <div class="am-modal-dialog">
+          <img src="../src/images/qr-code-gongju.png" alt="">
+          <span class="close-qr-code am-icon-close am-icon-md" data-am-modal-close></span>
         </div>
       </div>
     </div>
@@ -279,31 +274,31 @@
           常见问题
         </div>
         <div class="problem-box">
-          <ul class="problem-list">
-            <!-- <li>01. 礼物、礼物手续费、红包提现说明</li>
-            <li>02. 什么是爱情小屋</li>
-            <li>03. 喜帖吧电子请柬的文字怎么修改</li>
-            <li>04. 如何压缩上传图片</li>
-            <li>05. 红包怎么玩，喜帖吧红包攻略</li>
-            <li>06. 优惠券获取、使用方法</li>
-            <li>07. 如何设置喜帖标题</li> -->
-          </ul>
-          <div class="show-problem">
-            <!-- <h2 class="problem-title">如何压缩上传图片</h2>
-            <p>礼物、礼物手续费、红包提现说明什么是爱情小屋喜帖吧电子请柬的文字怎么修改</p>
-            <span>详细阅读原文</span>
-            <a href="" class="xtb-3dots" target="_blank">https://www.xitieba.com/nindex/123123123</a> -->
-          </div>
+          <ul class="problem-list"></ul>
+          <div class="show-problem"></div>
         </div>
         <div class="problem-tips">
-          <a class="other-problem" href="javascript:;">其他问题</a>
+          <a class="other-problem" href="javascript:;"></a>
           <a class="go-rengong" href="javascript:;">无法解决，转人工服务<img src="../src/images/kefu-touxiang.png" alt=""></a>
         </div>
         <div class="video-teaching">
           <img src="../src/images/kefu-teach.png" alt="">
           <span>视屏教学--极速上手做请柬</span>
         </div>
+        <span class="close-service-box am-icon-close am-icon-md" data-am-modal-close></span>
       </div>
+
+      <script type="text/javascript" src="../src/plugin/ckplayer/ckplayer.js"></script>
+      <div id="video" style="width:600px;height:400px;"></div>
+      <script type="text/javascript">
+        var videoObject = {
+          container: '#video',
+          variable: 'player',//该属性必需设置，值等于下面的new chplayer()的对象
+          flashplayer: false,//如果强制使用flashplayer则设置成true
+          video:'https://www.xitieba.com/video/YS_MobileVedio.mp4'//视频地址
+        };
+        var player=new ckplayer(videoObject);
+      </script>
     </div>
     <!-- 常见问题弹框 end -->
 
@@ -358,18 +353,20 @@
 
     var invitTemplateSlide = new Swiper('.invit-template-slide .gallery-thumbs', {
       // autoplay:true,
+      pagination: {
+        el: '.invit-template-slide-pagination',
+        clickable: false,
+        renderBullet: function (index, className) {
+          var invitText = ['高端森系夏季清新婚礼邀请函结婚请柬','甜美浪漫小清新婚礼邀请函','水彩唯美简约婚礼邀请函相册通用','浪漫婚礼邀请函 婚礼请柬  婚礼']
+          return `<span class="${className}"><h2>${invitText[index]}</h2><p>#123</p></span>`;
+        },
+      },
       loop: true,
       // 设置为true则点击slide会过渡到这个slide。
       // slideToClickedSlide: true,
       // 设置slider容器能够同时显示的slides数量
       slidesPerView: "auto",
       watchSlidesProgress: true,
-      // 设定slide与左边框的预设偏移量（单位px）
-      // slidesOffsetBefore: 60,
-      // slidesOffsetAfter: 80,
-      // 在slide之间设置距离（单位px）
-      // spaceBetween: 50,
-      // 抵抗率
       resistanceRatio: 1,
 
       on: {
@@ -398,15 +395,6 @@
         },
       }
     });
-    var galleryText = new Swiper('.gallery-text', {
-      effect: "fade",
-      loop: true,
-      slidesPerView: "auto",
-      fadeEffect: {
-        crossFade: true,
-      }
-    });
-    invitTemplateSlide.controller.control = galleryText;
 
 
     $('.item-scroll').each(function(key, val){
@@ -430,12 +418,12 @@
           var _this = $(this)
           var target = $(e.target)
           if(target.is('li')) {
+            $('.other-problem').text('其他问题')
             var index = target.index()
             var showProblem = `
               <h2 class="problem-title">${msg[index].title}</h2>
               <p>${msg[index].description}</p>
-              <span>详细阅读原文</span>
-              <a href="https://www.xitieba.com/${msg[index].path}" class="xtb-3dots" target="_blank">https://www.xitieba.com/${msg[index].path}</a>`
+              <a href="https://www.xitieba.com/${msg[index].path}" class="xtb-3dots" target="_blank">详细阅读原文</a>`
             _this.hide()
             $('.show-problem').show().html(showProblem)
           }
@@ -445,6 +433,7 @@
     $('.other-problem').click(function() {
       $('.show-problem').hide()
       $('.problem-list').show()
+      $('.other-problem').text('')
     })
     
   </script>
