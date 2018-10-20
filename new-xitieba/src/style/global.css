@@ -862,6 +862,7 @@
     background: #fe6265;
   }
   .xtb-header .login-box>li {
+    position: relative;
     float: left;
     color: #707070;
     padding: 0 10px;
@@ -872,6 +873,19 @@
   .xtb-header .login-box .login-down {
     position: relative;
     cursor: pointer;
+    min-width: 140px;
+  }
+  .xtb-header .login-box .msg-num {
+    position: absolute;
+    top: 12px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 50%;
+    background: #fe6265;
   }
   .xtb-header .login-box .login-down:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);

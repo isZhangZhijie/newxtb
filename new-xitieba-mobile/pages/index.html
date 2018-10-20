@@ -11,7 +11,7 @@
 
 
   <script src="../src/plugin/jquery-3.3.1.min.js"></script>
-  <script src="../src/plugin/flexible.js"></script>
+  <!-- <script src="../src/plugin/flexible.js"></script> -->
 
 
   <link href="../src/plugin/amazeui/css/amazeui.min.css" rel="stylesheet">
@@ -22,6 +22,7 @@
   <script src="../src/plugin/swiper/swiper.min.js"></script>
 
   <link rel="stylesheet" href="../src/style/global.css">
+  <script src="../src/js/rem.js"></script>
 
 
 </head>
@@ -267,9 +268,44 @@
       <p>没找到心仪的请柬</p>
       <h2>去全部请柬逛逛</h2>
       <a href="" class="go-invit-list">立即查看</a>
-      <a href="" class="help-btn"><img src="../src/images/index_Button.png" alt=""></a>
+      <a href="javascript:;" class="help-btn" data-am-modal="{target: '#service-box'}"><img src="../src/images/kefu.png" alt=""></a>
     </div>
     <!-- 首页底部提示 end -->
+    <!-- 常见问题弹框 start -->
+    <div class="service-box am-modal am-modal-no-btn" tabindex="-1" id="service-box">
+      <div class="am-modal-dialog">
+        <div class="service-title">
+          <img src="../src/images/kefu-wenhao.png" alt="">
+          常见问题
+        </div>
+        <div class="problem-box">
+          <ul class="problem-list">
+            <!-- <li>01. 礼物、礼物手续费、红包提现说明</li>
+            <li>02. 什么是爱情小屋</li>
+            <li>03. 喜帖吧电子请柬的文字怎么修改</li>
+            <li>04. 如何压缩上传图片</li>
+            <li>05. 红包怎么玩，喜帖吧红包攻略</li>
+            <li>06. 优惠券获取、使用方法</li>
+            <li>07. 如何设置喜帖标题</li> -->
+          </ul>
+          <div class="show-problem">
+            <!-- <h2 class="problem-title">如何压缩上传图片</h2>
+            <p>礼物、礼物手续费、红包提现说明什么是爱情小屋喜帖吧电子请柬的文字怎么修改</p>
+            <span>详细阅读原文</span>
+            <a href="" class="xtb-3dots" target="_blank">https://www.xitieba.com/nindex/123123123</a> -->
+          </div>
+        </div>
+        <div class="problem-tips">
+          <a class="other-problem" href="javascript:;">其他问题</a>
+          <a class="go-rengong" href="javascript:;">无法解决，转人工服务<img src="../src/images/kefu-touxiang.png" alt=""></a>
+        </div>
+        <div class="video-teaching">
+          <img src="../src/images/kefu-teach.png" alt="">
+          <span>视屏教学--极速上手做请柬</span>
+        </div>
+      </div>
+    </div>
+    <!-- 常见问题弹框 end -->
 
 
     <!-- 公共底部导航 start -->
@@ -379,6 +415,38 @@
         freeMode: true,
       });
     })
+
+
+    // 常见问题弹框数据请求
+    $.ajax({
+      type: "get",
+      url: "https://m.xitieba.com/customer/question",
+      success: function(msg){
+        var problemList = ''
+        msg.forEach(function(val, key) {
+          problemList += `<li>${key+1}.${val.title}</li>`
+        })
+        $('.problem-list').html(problemList).click(function(e) {
+          var _this = $(this)
+          var target = $(e.target)
+          if(target.is('li')) {
+            var index = target.index()
+            var showProblem = `
+              <h2 class="problem-title">${msg[index].title}</h2>
+              <p>${msg[index].description}</p>
+              <span>详细阅读原文</span>
+              <a href="https://www.xitieba.com/${msg[index].path}" class="xtb-3dots" target="_blank">https://www.xitieba.com/${msg[index].path}</a>`
+            _this.hide()
+            $('.show-problem').show().html(showProblem)
+          }
+        })
+      }
+    });
+    $('.other-problem').click(function() {
+      $('.show-problem').hide()
+      $('.problem-list').show()
+    })
+    
   </script>
 </body>
 </html>

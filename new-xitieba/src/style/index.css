@@ -96,6 +96,23 @@
   .xtb-it-invit-selector li:hover {
     color: #fe6265;
   }
+  .xtb-it-invit-use .xtb-it-default-show a {
+    display: block;
+    height: 16px;
+  }
+  .xtb-it-invit-use .xtb-it-default-show li:first-of-type a {
+    display: block;
+    width: 64px;
+    height: 16px;
+    overflow: hidden;
+    text-align: justify;
+  }
+  .xtb-it-invit-use .xtb-it-default-show li:first-of-type a:after {
+    display: inline-block;
+    width: 100%;
+    content: '';
+  }
+
 
 
   .xtb-it-slider {
