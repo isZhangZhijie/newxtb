@@ -566,6 +566,11 @@
     float: left;
     width: 500px;
   }
+  .invit-detail-content .h5-content {
+    position: absolute;
+    top: 0;
+    z-index: -100;
+  }
   .invit-detail-content .title {
     float: left;
     margin-right: 12px;
