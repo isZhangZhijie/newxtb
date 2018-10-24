@@ -87,7 +87,7 @@
         </div>
         <div class="swiper-slide">
           <a class="img-box" href="">
-            <img src="../src/images/example.jpg" alt="">
+            <img src="../src/images/1ld7rcc.jpg" alt="">
             <span class="shadow"></span>
             <h2 class="xtb-3dots">新婚需要注意的几点</h2>
           </a>
@@ -108,6 +108,26 @@
         </div>
       </div>
     </div>
+    <script>
+      $('.article-hot-slider .swiper-slide').each(function(key, val) {
+        let img = $(val).find('img')[0]
+        if (typeof img.naturalWidth == "undefined") {
+      　　// IE 6/7/8
+      　　var i = new Image();
+      　　i.src = img.src;
+      　　var rw = i.width;
+      　　var rh = i.height;
+        }
+        else {
+      　　// HTML5 browsers
+      　　var rw = img.naturalWidth;
+      　　var rh = img.naturalHeight;
+        }
+        if(!(rw/rh >= 620/360)) {
+          $(val).find('a').addClass('img-box-width100')
+        }
+      })
+    </script>
   </div>
   <div class="article-zhuanti-slider">
     <div class="swiper-container">

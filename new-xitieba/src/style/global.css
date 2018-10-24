@@ -541,6 +541,10 @@
   .xtb-invit-list-mini .xtb-invit-list-detail {
     padding: 0 10px;
   }
+  /* 无数据 */
+  .no-data {
+    text-align: center;
+  }
 /* 请柬列表公共样式 end */
 
 /* 请柬详情 start */
@@ -625,9 +629,12 @@
     background: #fe6265;
   }
   .invit-detail-content .invit-online-make-btn {
-    display: block;
+    float: left;
+    display: inline-block;
     width: 200px;
     height: 58px;
+    margin-right: 20px;
+    border: 1px solid #fe6265;
     border-radius: 4px;
     text-align: center;
     line-height: 58px;
@@ -636,6 +643,10 @@
     color: #fff;
     background: #fe6265;
     cursor: pointer;
+  }
+  .invit-detail-content .invit-online-make-btn:last-of-type {
+    background: #fff;
+    color: #fe6265;
   }
 
 
@@ -1015,6 +1026,7 @@
     right: 0;
     top: 150px;
     line-height: 1.6;
+    z-index: 101;
   }
   .sidebar a {
     display: block;

@@ -13,6 +13,8 @@
 
   <link href="../src/plugin/amazeui/css/amazeui.min.css" rel="stylesheet">
   <script src="../src/plugin/amazeui/js/amazeui.min.js"></script>
+  <link rel="stylesheet" href="../src/plugin/swiper/swiper.min.css">
+  <script src="../src/plugin/swiper/swiper.min.js"></script>
 
 
   <link rel="stylesheet" href="../src/style/global.css">
@@ -260,10 +262,22 @@
 
     <!-- 文章详情页右侧推荐 start -->
     <div class="articleList-right">
-      <div class="articleList-right-item">
-        <a href="" class="img-box" style="width: 310px;height: 147px;">
-          <img src="../src/images/lingqu.png" alt="">
-        </a>
+      <div class="articleList-right-item ad-slide-item">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="" class="img-box">
+                <img src="../src/images/ad-slide-item1.jpg" alt="">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="img-box">
+                <img src="../src/images/ad-slide-item2.jpg" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="swiper-pagination ad-item-pagination"></div>
+        </div>
       </div>
       <div class="articleList-right-item">
         <h3 class="title">相关推荐</h3>
@@ -440,6 +454,19 @@
       } else {
         $('.recommend-box').css({'position':'static'})
       }
+    })
+
+    // 右侧广告轮播
+    var adSlideItem = new Swiper('.ad-slide-item .swiper-container',{
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      loop : true,
+      pagination: {
+        el: '.ad-item-pagination',
+        clickable :true,
+      },
     })
   </script>
 </body>

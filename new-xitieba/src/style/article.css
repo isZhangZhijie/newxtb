@@ -208,8 +208,16 @@
     margin-top: -28px;
   }
   .article-top-zhuanlan a {
+    position: relative;
     display: block;
     margin-top: 10px;
+  }
+  .article-top-zhuanlan a span {
+    position: absolute;
+    left: 20px;
+    bottom: 24px;
+    font-size: 20px;
+    color: #fff;
   }
 
   .article-today-hot {
@@ -466,7 +474,7 @@
   .article-column .swiper-pagination span {
     width: 10px;
     height: 10px;
-    border-radius: 50%px;
+    border-radius: 50%;
     background: #fff;
     opacity: 1;
   }
@@ -655,6 +663,27 @@
   .articleList-right-item .xtb-invit-list {
     position: relative;
     left: -10px;
+  }
+  .articleList-right-item.ad-slide-item {
+    border: 0;
+    padding: 0;
+  }
+  .articleList-right-item.ad-slide-item .img-box {
+    height: 192px;
+  }
+  .articleList-right-item.ad-slide-item .swiper-pagination {
+    padding-right: 30px;
+    text-align: right;
+  }
+  .articleList-right-item.ad-slide-item .swiper-pagination span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 1;
+  }
+  .articleList-right-item.ad-slide-item .swiper-pagination .swiper-pagination-bullet-active {
+    background: #fe6265;
   }
 
   .articleList-bottom-ad {

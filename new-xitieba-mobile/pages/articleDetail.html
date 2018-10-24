@@ -450,9 +450,12 @@
         return false;
       }
     }
+    
     if(isWeiXin()) {
       $('.xtb-header').hide()
       $('.article-share .wechat').attr('data-am-modal', "{target: '#share-in-wechat'}")
+      $('.article-sel-bar1').css({'background': 'linear-gradient(to right, #FF58D8, #FF9494)'}).find('.go-to-lanmu img').attr('src','https://m.xitieba.com/new-mobile/src/images/article_allColumn2.png')
+      $('.article-sel-bar1 a').css({'color':'#fff'})
     } else {
       $('.article-share .wechat').attr('data-am-modal', "{target: '#share-in-notwechat'}")
     }
