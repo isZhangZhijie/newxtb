@@ -568,8 +568,7 @@
   }
   .invit-detail-content .h5-content {
     position: absolute;
-    top: 0;
-    z-index: -100;
+    top: -800px;
   }
   .invit-detail-content .title {
     float: left;
@@ -826,6 +825,7 @@
   .xtb-header {
     height: 68px;
     border-bottom: 2px solid #d8d8d8;
+    background-color: #fff;
   }
   .xtb-header [class*="am-"] {
     padding-left: 0;
@@ -908,6 +908,7 @@
   }
   .xtb-header .login-box .login-down-menu {
     display: block;
+    position: relative;
     height: 100%;
   }
   .xtb-header .login-box .login-down-menu .img-box {
@@ -919,8 +920,12 @@
     display: inline-block;
   }
   .xtb-header .login-box .login-down-menu i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
     display: inline-block;
-    margin-left: 4px;
     width: 19px;
     height: 11px;
     background: url(../images/arrow-down.png) no-repeat center;
